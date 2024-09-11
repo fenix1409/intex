@@ -1,0 +1,17 @@
+.login-body{
+    background-image: url("../images/login-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 90vh;
+}
+.register-body{
+    background-image: url("../images/register-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 90vh;
+}
+.shadow-loginShadow{
+    box-shadow: 0px 0px 11px 0px #00000040;
+}
