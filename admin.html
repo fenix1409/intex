@@ -13,9 +13,63 @@
         }
     </style>
 </head>
-<body>
-    <h1>Hi</h1>
-
+<body class="bg-[#F8F8F8]">
+    
+    <div class="flex">
+        <nav class="w-[22%] h-[100vh] overflow-y-auto bg-white">
+            <div class="p-[35px] border-b-[1px] border-[#EBEBFF]">
+                <img src="./images/logo.svg" alt="logo" width="200" height="48">
+            </div>
+            <ul class="pt-[33px] pl-[41px] space-y-[15px]">
+                <li class="text-[25px] leading-[35px] hover:text-[#009398] duration-300 cursor-pointer">Продукты</li>
+                <li class="text-[25px] leading-[35px] hover:text-[#009398] duration-300 cursor-pointer">Заказы</li>
+                <li class="text-[25px] leading-[35px] hover:text-[#009398] duration-300 cursor-pointer">Категории</li>
+                <li class="text-[25px] leading-[35px] hover:text-[#009398] duration-300 cursor-pointer">Сайт</li>
+            </ul>
+        </nav>
+        <div class="w-[78%] h-[100vh] overflow-y-auto">
+            <div class="flex items-center justify-end gap-[31px] px-[61px] py-[31.5px] border-b-[2px] border-[#EBEBFF]">
+                <a class="text-[22px] leading-[25px] text-[#A6A6A6] border-r-[2px] pr-7 border-slate-500" href="#">Просмотр веб-сайта</a>
+                <button class="flex items-center gap-[18px]">
+                    <img class="" src="./images/avatar.svg" alt="avatar" width="18" height="22">
+                    <span class="text-[22px] leading-[25px] text-[#A6A6A6]">Joe Melton</span>
+                </button>
+            </div>
+            <div class="flex items-center justify-between pt-[22px] px-[42px] pb-[40px]">
+                <label class="inline-block w-[377px] py-[11px] pl-[34px] pr-[24px] bg-white rounded-[30px]">
+                    <input class="py-[14px] text-[23px] leading-[23px] w-[80%] outline-none border-r-[1px] border-[#EBEBFF]" type="text" placeholder="Найти" name="searchValue">
+                    <img class="pl-[29px]" src="./images/lupa.svg" alt="lupa" width="24" height="24">
+                </label>
+                <button onclick="handleAddProductBtnClick()" class="w-[222px] inline-block py-[20px] bg-[#3F8C8E] text-white text-[20px] text-center font-bold rounded-[30px]">+ Добавить продукт</button>
+            </div>
+            <ul class="category-list flex items-center justify-center space-x-[46px] mb-[74px]"> 
+                <li id="1" class="font-bold text-[35px] leading-10 text-[#009398] border-b-[2px] border-[#009398] pb-2 cursor-pointer">Каркасные</li>
+                <li id="2" class="font-bold text-[35px] leading-10 text-[#A6A6A6] border-b-[2px] border-transparent pb-2 cursor-pointer">Надувные</li>
+            </ul>
+            <div class="px-[42px]">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-white">
+                            <th class="text-center py-[17px] text-[20px] leading-[35px] rounded-tl-[30px] rounded-bl-[30px]">Изображение</th>
+                            <th class="text-start py-[17px] text-[20px] leading-[35px]">Цена(сум)</th>
+                            <th class="text-start py-[17px] text-[20px] leading-[35px]">Количество</th>
+                            <th class="text-start py-[17px] text-[20px] leading-[35px]">Рамка</th>
+                            <th class="text-start py-[17px] text-[20px] leading-[35px] rounded-tr-[30px] rounded-br-[30px]">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody class="pool-tbody">
+                        
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+    <div class="modal-wrapper fixed scale-0 top-0 bottom-0 right-0 left-0 backdrop-blur duration-300" id="wrapper">
+        <div class="modal-inner w-[1000px] h-[700px] bg-slate-300 absolute top-0 bottom-0 right-0 left-0 m-auto rounded-md">
+            
+        </div>
+    </div>
+    
     <script src="./js/admin.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
