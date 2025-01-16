@@ -197,7 +197,7 @@ function handleDeleteProductClickBtn(id){
     (".delete-btn")
     const deleteIndex = products.findIndex(item => item.id == id)
     const findedObj = products.find(item => item.id == id)
-
+    
     elDeleteBtn.innerHTML = `
         <img class="mx-auto scale-[1.4]" src="./images/loading.png" alt="loading" width="35">
 ` 
@@ -244,47 +244,47 @@ function handleEditCLickBtn(id){
     </form>
     
     `
-
+    
     elEditForm = document.querySelector(".edit-product-form")
     let elEditChooeseInput = document.querySelector(".edit-choose-input")
     let elEditImg = document.querySelector(".edit-choose-img")
-
+    
     elEditChooeseInput.addEventListener("change", function(e){
         elEditImg.src = URL.createObjectURL(e.target.files[0])
     })
-
+    
     elEditForm.addEventListener("submit", function(e){
         e.preventDefault()
         let elEditBtn = document.querySelector(".edit-btn")
         elEditBtn.innerHTML = `
             <img class="mx-auto scale-[1.4]" src="./images/loading.png" alt="loading" width="35">        
     `
-      
-    setTimeout(() => {
-        findedObj.imgUrl = elEditImg.src
-        findedObj.categoryId = e.target.category.value
-        findedObj.oldPrice = e.target.oldPrice.value
-        findedObj.frame = e.target.frame.value
-        findedObj.amount = e.target.amount.value
-        findedObj.newPrice = e.target.newPrice.value
-
-
-
-        if(e.target.category.value == "1"){
-            elCategoryList.children[0].className = active
-            elCategoryList.children[1].className = disabled
-        }
-        else if(e.target.category.value == "2"){
-            elCategoryList.children[0].className = disabled
-            elCategoryList.children[1].className = active
-        }
-
-
-
-        elModalWrapper.classList.add("scale-0")
-        renderPools(products, e.category.value)
-        localStorage.setItem("product", JSON.stringify(products))
-    }, 1000);
+        
+        setTimeout(() => {
+            findedObj.imgUrl = elEditImg.src
+            findedObj.categoryId = e.target.category.value
+            findedObj.oldPrice = e.target.oldPrice.value
+            findedObj.frame = e.target.frame.value
+            findedObj.amount = e.target.amount.value
+            findedObj.newPrice = e.target.newPrice.value
+            
+            
+            
+            if(e.target.category.value == "1"){
+                elCategoryList.children[0].className = active
+                elCategoryList.children[1].className = disabled
+            }
+            else if(e.target.category.value == "2"){
+                elCategoryList.children[0].className = disabled
+                elCategoryList.children[1].className = active
+            }
+            
+            
+            
+            elModalWrapper.classList.add("scale-0")
+            renderPools(products, e.category.value)
+            localStorage.setItem("product", JSON.stringify(products))
+        }, 1000);
     })
 }
 function handleErrorImg() {
@@ -323,8 +323,8 @@ function handleLoginBtn(){
     elModalInner.classList.add("w-[500px]")
     elModalInner.classList.remove("h-[680px]")
     elModalInner.classList.add("h-[200px]")
-
-
+    
+    
     elModalInner.innerHTML = `
     <div class="p-5">
        <h2 class="text-center text-[25px]">Are you sure logout?</h2>
